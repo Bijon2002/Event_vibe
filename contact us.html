@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="icon" href="white.png" type="image/x-icon">
+    <link rel="stylesheet" href="contact us.css">
+</head>
+<body>
+
+     <!--pre loader               -->
+     <div id="preloader">
+
+     </div> 
+
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="white.png" alt="logo">
+                <h3>Event Vibe...✨</h3>
+            </div>
+            <ul>
+                <li class="nav-item"><a href="home.html">Home</a></li>
+                <li class="nav-item"><a href="events.html">Events</a></li>
+                <li class="nav-item"><a href="login.html">Login</a></li>
+                <li class="nav-item"><a href="Event  plans.html">Plans</a></li>
+                <li class="nav-item"><a href="contact us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="texts">
+            <center><h1>Contact Us</h1></center>
+            <br>
+            <h3>Have a question or need assistance with your event?</h3><br>
+            <p>We’re here to help make your event planning seamless and enjoyable! Whether you have a question about a booking, need help selecting the perfect venue, or want to learn more about our premium services, our Event Vibe support team is ready to assist.</p>
+            <br>
+            <p>Please fill out the form below or reach us via email or phone. We aim to respond within 24 hours during business hours (Monday to Friday, 9 am to 5 pm).</p>
+            <h2>Contact Information</h2>
+            <p>
+                📧 Email: support@eventvibe.com <br>
+                📞 Phone: +94 720172910 <br>
+                💬 Live Chat : Available on our website during business hours
+            </p>
+        </div>
+        <center>
+            <div class="forms">
+                <form action="#" method="post">
+                    <label for="firstname">First Name</label>
+                    <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" required><br>
+
+                    <label for="lastname">Last Name </label>
+                    <input type="text" id="lastname" name="lastname" placeholder="Enter your last name" required><br>
+
+                    <label for="email">Email</label><br>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required><br>
+
+                    <label for="mobile">Phone Number (optional)</label>
+                    <input type="tel" id="mobile" name="mobile" placeholder="Enter your phone number"><br>
+
+                    <label for="topic">Select Your Topic </label>
+                    <select id="topic" name="topic" required>
+                        <option value="">-- Please choose an option --</option>
+                        <option value="venue-inquiry">Venue Inquiry</option>
+                        <option value="booking-assistance">Booking Assistance</option>
+                        <option value="pricing-package">Pricing & Package</option>
+                        <option value="event-types">Event Types</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <label for="ifother">Message</label>
+                    <textarea name="message" id="ifother" cols="30" rows="4" placeholder="Describe your inquiry or provide additional details"></textarea>
+
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </center>
+    </main>
+    <footer>
+        <p>&copy; 2024 All rights reserved by <b>Event Vibe</b>, Designed by <a href="https://bijon2002.github.io/portfolio/">Bijon Solutions...</a></p>
+    </footer>
+
+      <!--script for preloader        -->
+      <script>
+        var loader = document.getElementById("preloader");
+
+        window.addEventListener('load', function(load) {
+            window.removeEventListener('load', load, false);               
+            setTimeout(function(){loader.style.display = 'none'},2000);
+          
+          },false);
+    </script>
+</body>
+</html>

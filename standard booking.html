@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="white.png" type="image/x-icon">
+    <title>Standard Booking Confirmation</title>
+    <link rel="stylesheet" href="standard booking.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="white.png" alt="logo">
+                <h3>Event Vibe...✨</h3>
+            </div>
+            <ul>
+                <li class="nav-item"><a href="home.html">Home</a></li>
+                <li class="nav-item" id="home-item"><a href="event list.html">Events</a></li>
+                <li class="nav-item"><a href="login.html">Login</a></li>
+                <li class="nav-item"><a href="Event  plans.html">Plans</a></li>
+                <li class="nav-item"><a href="contact us.html">Contact us</a></li>
+           
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="booking">
+            <h1 id="head">Our Standard Plan</h1>
+            <h4 id="sub">Booking Summary</h4>
+
+            <br><br><br>
+
+            <!-- Hall Options -->
+            <div class="hall-BA" id="hall1">
+
+                <label>
+
+                    <input type="radio" name="hall" value="80000" onclick="updateTotal()"> 
+                    Hall: Thamayanthi Hall (Capacity: 100 Guests, Price: LKR 80,000)
+                </label>
+            </div>
+
+            <div class="hall-BA" id="hall2">
+                <label>
+                    <input type="radio" name="hall" value="100000" onclick="updateTotal()"> 
+                    Hall: Green Grass Hotel – Mini Hall (Capacity: 120 Guests, Price: LKR 100,000)
+                </label>
+            </div>
+
+            <div class="hall-BA" id="hall3">
+                <label>
+                    <input type="radio" name="hall" value="150000" onclick="updateTotal()"> 
+                    Hall: Tilko City Hotel (Capacity: 150 Guests, Price: LKR 150,000)
+                </label>
+            </div>
+
+            <div class="hall-BA" id="hall4">
+                <label>
+                    <input type="radio" name="hall" value="180000" onclick="updateTotal()"> 
+                    Hall: Chelva Mahal  (Capacity: 170 Guests, Price: LKR 180,000)
+                </label>
+            </div>
+
+            <br><br>
+
+            <!-- Catering Options -->
+            <div class="food">
+                <h2 id="cat">Catering</h2>
+                <label>
+                    <input type="radio" name="catering" value="30000" onclick="updateTotal()"> Vegetarian (LKR 30,000)
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="catering" value="40000" onclick="updateTotal()"> Non-Vegetarian (LKR 40,000)
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="catering" value="50000" onclick="updateTotal()"> Veg & Non-Veg (LKR 50,000)
+                </label>
+            </div>
+
+            <br><br>
+
+            <!-- Additional Options -->
+            <h4>Music</h4>
+            <p>Background music via speaker system</p>
+            <br><br>
+            <h4>Photography (Additional Cost)</h4>
+            <br>
+            <label class="checkbox-label" for="photo">
+                <input type="checkbox" id="photo" value="30000" onclick="updateTotal()"> Photography: LKR 30,000 for 3 hours
+            </label>
+
+            <br><br><br>
+
+            <!-- Total Cost and Confirmation Button -->
+            <center>
+                <h4>Total Cost<br><span id="totalCost">LKR 0.00</span></h4>
+                <button class="btn"><a href="confirm.html">Confirm </a></button>
+            </center>
+        </div>
+
+ 
+    </main>
+
+    <footer>
+        <p>&copy; 2024 All rights reserved by <b>Event Vibes</b>, Designed by <a href="https://bijon2002.github.io/portfolio/">Bijon Solutions...</a></p>
+    </footer>
+
+    <script>
+        function updateTotal() {
+            let totalCost = 0;
+
+            // Retrieve the selected hall price
+            let hallPrice = document.querySelector('input[name="hall"]:checked');
+            if (hallPrice) {
+                totalCost += parseFloat(hallPrice.value);
+            } else {
+                totalCost += 0;
+            }
+
+            // Retrieve the selected catering price
+            let cateringPrice = document.querySelector('input[name="catering"]:checked');
+            if (cateringPrice) {
+                totalCost += parseFloat(cateringPrice.value);
+            } else {
+                totalCost += 0;
+            }
+
+            // Retrieve the photography cost if selected
+            let photographyCheckbox = document.getElementById('photo');
+            if (photographyCheckbox.checked) {
+                totalCost += parseFloat(photographyCheckbox.value);
+            } else {
+                totalCost += 0;
+            }
+
+            // Display the total cost
+            document.getElementById("totalCost").innerText = `LKR ${totalCost.toFixed(2)}`;
+        }
+    </script>
+
+
+</body>
+</html>
